@@ -147,3 +147,6 @@ No frontend components, routes, or styles were touched.
 - `bun run build` — succeeds
 - `tsc --noEmit` — zero errors
 - `bun run lint` — no new errors introduced (pre-existing formatting issues on `main` remain untouched)
+- Migrations applied to the live Supabase project (`supabase db push`):
+  3 tables with RLS enabled, 7 public policies + 8 storage policies, and all
+  4 buckets verified present.
