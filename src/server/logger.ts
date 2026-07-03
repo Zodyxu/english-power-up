@@ -7,10 +7,10 @@ type LogContext = Record<string, unknown>;
 
 function log(level: LogLevel, message: string, context?: LogContext) {
   const entry = JSON.stringify({
+    ...context,
     level,
     message,
     time: new Date().toISOString(),
-    ...context,
   });
   if (level === "error") console.error(entry);
   else if (level === "warn") console.warn(entry);

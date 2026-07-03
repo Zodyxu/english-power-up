@@ -1,5 +1,7 @@
-// Browser/shared Supabase client (anon key, RLS enforced). Lazily created so
-// the app still renders when Supabase env vars are not configured yet.
+// Browser/shared Supabase client (anon key, RLS enforced). Created lazily so
+// importing this module never throws; callers should check
+// isSupabaseConfigured() before calling getSupabaseClient() when Supabase env
+// vars may be absent.
 
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
